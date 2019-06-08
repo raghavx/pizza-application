@@ -2,23 +2,40 @@ package in.ac.sharda.pizzaapplication.domain;
 
 public class Product {
 
-	private int id;
+	private final int id, calories;
+	
 	private int price;
-	private String name, description;
+	private String name, desc;
 	
-	
-	public Product(int id, int price, String name, String description) {
+	public Product(int id, int price, 
+			String name, String desc, int calories) {
+		
 		this.id = id;
 		this.price = price;
 		this.name = name;
-		this.description = description;
+		this.desc = desc;
+		this.calories = calories;
 	}
+	
+	
+	
+	public Product(int id, int calories) {
+		this.calories = calories;
+		this.id = id;
+	}
+
+
+
+	public int getCalories() {
+		return calories;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 	public int getPrice() {
 		return price;
 	}
@@ -31,17 +48,11 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDescription() {
-		return description;
+	public String getDesc() {
+		return desc;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 	
-	@Override
-	public boolean equals(Object obj) {
-		if(obj!=null && obj instanceof Product)
-			return ((Product)obj).getId() == id;
-		return false;
-	}
 }
