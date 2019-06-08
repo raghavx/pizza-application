@@ -1,27 +1,31 @@
 package in.ac.sharda.pizzaapplication.service;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import in.ac.sharda.pizzaapplication.data.Products;
 import in.ac.sharda.pizzaapplication.domain.Product;
 
 @Service
 public class ProductServiceImpl 
 				implements ProductService{
 	private Map<Integer,Product>
-			products = new HashMap<>();
+			products = Products
+			.getInstance().getProducts();
+	
+	
 	
 	public Product getProductById(int id){
 		return products.get(id);
 	}
 
 	@Override
-	public List<Product> getProducts() {
-		// TODO Auto-generated method stub
-		return null;
+	public Collection<Product> getProducts() {
+		return products.values();
 	}
 	
 	

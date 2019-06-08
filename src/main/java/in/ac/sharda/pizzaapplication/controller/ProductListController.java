@@ -1,6 +1,7 @@
 package in.ac.sharda.pizzaapplication.controller;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class ProductListController {
 	private ProductService productService;
 
 	@GetMapping("product/list")
-	public List<Product> products(){
+	public Collection<Product> products(){
 		return productService.getProducts();
 	}
 }
