@@ -17,8 +17,6 @@ public class ProductServiceImpl
 			products = Products
 			.getInstance().getProducts();
 	
-	
-	
 	public Product getProductById(int id){
 		return products.get(id);
 	}

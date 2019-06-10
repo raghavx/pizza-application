@@ -1,5 +1,6 @@
 package in.ac.sharda.pizzaapplication.domain;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -10,7 +11,7 @@ private final int id;
 	private static final Cart instance = new Cart(1);
 
 	private Set<Product> products
-		= new TreeSet<>();
+		= new HashSet<>();
 	
 	private Cart(int id) {
 		

@@ -2,11 +2,11 @@ package in.ac.sharda.pizzaapplication.domain;
 
 public class Product {
 
-	private final int id, calories;
+	private int id, calories;
 	
 	private int price;
 	private String name, desc;
-	
+	public Product(){}
 	public Product(int id, int price, 
 			String name, String desc, int calories) {
 		
@@ -26,6 +26,12 @@ public class Product {
 
 
 
+	public void setId(int id) {
+		this.id = id;
+	}
+	public void setCalories(int calories) {
+		this.calories = calories;
+	}
 	public int getCalories() {
 		return calories;
 	}
@@ -53,6 +59,19 @@ public class Product {
 	}
 	public void setDesc(String desc) {
 		this.desc = desc;
+	}
+	
+	@Override
+	public int hashCode() {
+		return id;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj != null && obj instanceof Product){
+			return ((Product)obj).getId() == id;
+		}
+		return false;
 	}
 	
 }
