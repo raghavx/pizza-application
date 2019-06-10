@@ -47,4 +47,9 @@ private final int id;
 			}
 			return false;
 		}
+
+	public void clear() {
+		products.clear();
+		
+	}
 }
