@@ -7,22 +7,25 @@ import in.ac.sharda.pizzaapplication.domain.Product;
 
 public class Products {
 	private Map<Integer, Product> products = new HashMap<>();
-	private static final Products instance
-						= new Products();
-	private Products(){
-		for(int i = 1; i < 20; i++){
-			products.put(i, 
-					new Product(i, i*10, 
-							"Name "+i, "Desc "+i, i * 3));
-		}
-	}
+	private static final Products instance = new Products();
+
+	private Products() {
+
+		products.put(1, new Product(1, 10, "Peppy Paneer Pizza",
+				"Description of topping - Dried Green Olive, Chees, Indian Cheese, Etc ", 100));
 	
-	public static Products getInstance(){
+		products.put(2, new Product(1, 10, "Tandoori Paneer Pizza",
+				"Description of topping - Dried Green Olive, Chees, Indian Cheese, Etc ", 100));
+		products.put(1, new Product(1, 10, "Chicken Pizza",
+				"Description of topping - Dried Green Olive, Chees, Indian Cheese, Etc ", 100));
+	}
+
+	public static Products getInstance() {
 		return instance;
 	}
-	
+
 	public Map<Integer, Product> getProducts() {
 		return products;
 	}
-	
+
 }

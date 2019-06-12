@@ -8,7 +8,9 @@
 	<h1>List of pizaa</h1>
 	<table class="table">
 		<tr th:each="product : ${products}">
-			<td th:text="${product.id}">Data</td>
+			<td> 
+				<a th:href="@{/cart/product/add/__${product.id}__}">Add to Cart</a>
+			</td>
 			<td th:text="${product.name}">Data</td>
 			<td th:text="${product.desc}">Data</td>
 			<td th:text="${product.price}">Data</td>
