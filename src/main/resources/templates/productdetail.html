@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.com">
+<head>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></link>
+
+</head>
+<body class="container">
+	<table>
+		<tr>
+			<td>Name</td>
+			<td th:text="${product.name}">Value</td>
+		</tr>
+
+		<tr>
+			<td>Price</td>
+			<td th:text="${product.price}">Value</td>
+		</tr>
+		<tr>
+			<td>Description</td>
+			<td th:text="${product.desc}">Value</td>
+		</tr>
+	</table>
+	<form th:action="@{/web/cart/add}" method="post">
+	<input type="hidden" th:value="${product.id}"></input>
+		<button type="submit"
+		class="btn btn-primary">Add To Cart</button>
+	</form>
+</body>
+</html>

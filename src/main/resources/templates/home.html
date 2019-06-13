@@ -9,13 +9,14 @@
 	<table class="table">
 		<tr th:each="product : ${products}">
 			<td> 
-				<a th:href="@{/cart/product/add/__${product.id}__}">Add to Cart</a>
+				<a th:href="@{/web/product/detail/__${product.id}__}">View Detail</a>
 			</td>
 			<td th:text="${product.name}">Data</td>
 			<td th:text="${product.desc}">Data</td>
 			<td th:text="${product.price}">Data</td>
 		</tr>
 	</table>
+	
 </body>
 
 </html>
